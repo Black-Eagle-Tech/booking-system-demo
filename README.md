@@ -1,71 +1,123 @@
-# NovaCare — Booking & Appointment System Demo
+# NovaCare — Premium Booking SaaS Demo
 
-Modern booking and appointment system built with Vue 3 + Vite + TailwindCSS v4.
+Modern booking and appointment management platform built with Vue 3, Vite and TailwindCSS v4.
 
-## Features
-
-- Modern SaaS UI
-- Responsive layout
-- Booking cards
-- Appointment dashboard
-- Dark mode aesthetic
-- Vue Router structure
-- Modular architecture
-- TailwindCSS v4
-- Ready for customization
+Designed as a premium SaaS demo focused on modern UX, glassmorphism UI, animations and scalable architecture.
 
 ---
 
-## Tech Stack
+# Preview
+
+NovaCare simulates a modern appointment booking platform for:
+
+- Clinics
+- Hair salons
+- Coaches
+- Consultants
+- Wellness businesses
+- Service-based companies
+
+The project includes:
+
+- Premium landing page
+- Booking flow
+- Dashboard UI
+- Analytics preview
+- Dark / Light mode
+- Responsive design
+- Microinteractions
+- Modern SaaS architecture
+
+---
+
+# Tech Stack
 
 - Vue 3
 - Vite
-- TailwindCSS v4
-- Pinia
 - Vue Router
+- TailwindCSS v4
 - Lucide Icons
+- JavaScript
 
 ---
 
-## Installation
+# Features
 
-Extract the ZIP and run:
+## Landing Page
 
-```bash
-npm install
-```
+- Hero section
+- Services section
+- Pricing section
+- Testimonials section
+- FAQ section
+- CTA section
+- Premium footer
+
+## Booking System
+
+- Service selection
+- Date selection
+- Time slot selection
+- Booking summary
+- Success modal
+- Toast notifications
+
+## Dashboard
+
+- Analytics cards
+- Animated counters
+- Upcoming appointments
+- Dashboard layout
+
+## UX / UI
+
+- Glassmorphism design
+- Spotlight hover effect
+- Reveal animations
+- Floating elements
+- Pulse glow effects
+- Loading screen
+- Route transitions
+- Responsive mobile experience
+
+## System Features
+
+- Dark / Light mode
+- Theme persistence with localStorage
+- Lazy loaded routes
+- SEO-ready structure
+- Reusable UI components
+- Modular feature architecture
 
 ---
 
-## Development Server
-
-```bash
-npm run dev
-```
-
-Open:
-
-```bash
-http://localhost:5173
-```
-
----
-
-## Build Production
-
-```bash
-npm run build
-```
-
----
-
-## Project Structure
+# Project Structure
 
 ```bash
 src/
 ├── components/
-├── views/
+│   ├── layout/
+│   └── ui/
+│
+├── composables/
+│
+├── directives/
+│
+├── features/
+│   ├── booking/
+│   ├── calendar/
+│   ├── dashboard/
+│   ├── faq/
+│   ├── landing/
+│   ├── modals/
+│   ├── notifications/
+│   ├── pricing/
+│   └── system/
+│
+├── layouts/
 ├── router/
+├── views/
+│
 ├── App.vue
 ├── main.js
 └── style.css
@@ -73,36 +125,170 @@ src/
 
 ---
 
-## Included Pages
+# Installation
 
-- Home
-- Booking
-- Dashboard
+## Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/booking-system-demo.git
+```
 
 ---
 
-## Recommended Next Improvements
+## Navigate into the project
 
-- Real backend API
-- Firebase/Auth
-- Stripe integration
-- Real calendar sync
-- Email notifications
-- Multi-language
-- CMS integration
+```bash
+cd booking-system-demo
+```
+
+---
+
+## Install dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Start development server
+
+```bash
+npm run dev
+```
+
+---
+
+# Production Build
+
+```bash
+npm run build
+```
+
+---
+
+# Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+# GitHub Pages Deployment
+
+## Install gh-pages
+
+```bash
+npm install gh-pages --save-dev
+```
 
 ---
 
 ## Deploy
 
-Recommended platforms:
-
-- Vercel
-- Netlify
-- GitHub Pages
+```bash
+npm run deploy
+```
 
 ---
 
-## Author
+# IMPORTANT — Vue Router and GitHub Pages
 
-Built for scalable LATAM SaaS demos and client projects.
+This project uses:
+
+```js
+createWebHistory()
+```
+
+GitHub Pages does not support SPA history fallback natively.
+
+Because of that, direct navigation to routes like:
+
+```text
+/booking
+/dashboard
+```
+
+may return a 404 after refresh.
+
+---
+
+# Recommended Solution
+
+For GitHub Pages deployments, it is recommended to switch to:
+
+```js
+createWebHashHistory()
+```
+
+inside:
+
+```bash
+src/router/index.js
+```
+
+Example:
+
+```js
+import {
+  createRouter,
+  createWebHashHistory,
+} from 'vue-router'
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+})
+```
+
+This avoids routing issues on GitHub Pages.
+
+---
+
+# Alternative
+
+If you want to keep:
+
+```js
+createWebHistory()
+```
+
+then deploy using platforms with SPA fallback support such as:
+
+- Vercel
+- Netlify
+- Cloudflare Pages
+
+---
+
+# Design Goals
+
+NovaCare was built to simulate a modern premium SaaS experience with:
+
+- clean architecture
+- reusable components
+- scalable structure
+- modern animations
+- premium UI/UX
+- responsive layouts
+
+The project is intended for:
+
+- portfolio presentation
+- agency showcases
+- SaaS demos
+- client acquisition
+- reusable project starter
+
+---
+
+# Author
+
+Black Eagle Tech
+
+---
+
+# License
+
+This project is for educational and portfolio purposes.
